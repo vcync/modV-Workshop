@@ -48,8 +48,8 @@ In order to get all files that are needed for the workshop, please [download](ht
 
 The important folders are:
 
-* *modules*: Example modules to extend modV
-* *presets*: Configurations that will be used during the workshop
+* [modules](modules): Example modules to extend modV
+* [presets](presets): Configurations that will be used during the workshop
 
 ---
 
