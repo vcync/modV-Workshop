@@ -14,15 +14,15 @@
   - [Who is behind modV?](#who-is-behind-modv)
   - [Where is modV being used?](#where-is-modv-being-used)
 - [1. Get to know modV](#1-get-to-know-modv)
-- [Audio reactive visuals](#audio-reactive-visuals)
+- [2. Audio reactive visuals](#2-audio-reactive-visuals)
   - [Audio routing](#audio-routing-1)
-- [Techniques to get certain effects](#techniques-to-get-certain-effects)
+- [3. Techniques to get certain effects](#3-techniques-to-get-certain-effects)
   - [Tunnel effect](#tunnel-effect)
   - [Background fade](#background-fade)
   - [Using a group as mask (text)](#using-a-group-as-mask-text)
   - [Hue rotation for trailing colors](#hue-rotation-for-trailing-colors)
-- [Add modules into modV](#add-modules-into-modv)
-- [Using modV live](#using-modv-live)
+- [4. Add modules into modV](#4-add-modules-into-modv)
+- [5. Use modV for a live performance](#5-use-modv-for-a-live-performance)
 
 ---
 
@@ -102,7 +102,7 @@ DEMO : Basic animation with build in modules
 
 ---
 
-# Audio reactive visuals
+# 2. Audio reactive visuals
 
 * Use Audio reactive parameters, smoothing, blend modes of layers
 * Load a custom shader from Diana / Eliza into modV
@@ -119,7 +119,7 @@ Demo: Audio routing with external audio source
 
 ---
 
-# Techniques to get certain effects
+# 3. Techniques to get certain effects
 
 TODO: Please add a preset for each effect into [presets](/presets)!
 
@@ -135,7 +135,7 @@ Isn't this when I usually do "Blend > Source In" on the elements after the Text 
 
 ---
 
-# Add modules into modV
+# 4. Add modules into modV
 
 * Taking stuff from other people
    * Shadertoy License
@@ -147,7 +147,7 @@ Isn't this when I usually do "Blend > Source In" on the elements after the Text 
 
 ---
 
-# Using modV live
+# 5. Use modV for a live performance
 
    * How to recover from a crash
    * How to use MIDI
