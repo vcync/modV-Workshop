@@ -10,7 +10,7 @@
   - [modV setup](#modv-setup)
   - [Audio Routing](#audio-routing)
   - [Download / clone the repository](#download--clone-the-repository)
-- [modV?](#modv)
+- [Before we start...](#before-we-start)
   - [Who is behind modV?](#who-is-behind-modv)
   - [Where is modV being used?](#where-is-modv-being-used)
 - [1. Get to know modV](#1-get-to-know-modv)
@@ -66,7 +66,7 @@ The important folders are:
 
 ---
 
-# modV?
+# Before we start...
 
 In this workshop we are using modV 3.x, the latest version of modV that comes as a standalone desktop application. With modV, you can combine modules with each other to generate visual output. Every module has properties that can be updated in real time to change how the module is drawn. Each of these properties can also be updated automatically using audio features based on audio input (e.g. a microphone). 
 
@@ -140,10 +140,11 @@ Isn't this when I usually do "Blend > Source In" on the elements after the Text 
 * Taking stuff from other people
    * Shadertoy License
    * CodePen License
-   * ISF
+   * Make clear that taking resources from someone else should always be credited as we don’t want to steal anyone's work AND check the license
+* Load the shader from Diana & Eliza
+* ISF
    * Provide a guide on how to load your own shaders + parameterize them into modV (advanced)
       * And mention this one for people that are way to fast
-   * Make clear that taking resources from someone else should always be credited as we don’t want to steal anyone's work AND check the license
 
 ---
 
@@ -151,6 +152,9 @@ Isn't this when I usually do "Blend > Source In" on the elements after the Text 
 
    * How to recover from a crash
    * How to use MIDI
+   * Streaming with OBS
+   * Collaborate over Remote Desktop 
+     * If we can make this work :D
 
 
 ---
