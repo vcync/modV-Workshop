@@ -14,10 +14,18 @@
   - [Who is behind modV?](#who-is-behind-modv)
   - [Where is modV being used?](#where-is-modv-being-used)
 - [1. Get to know modV](#1-get-to-know-modv)
+  - [Change the layout](#change-the-layout)
+  - [Add a module to a group](#add-a-module-to-a-group)
+    - [Text](#text)
+    - [Waveform](#waveform)
+    - [Webcam](#webcam)
   - [Save / Load a preset](#save--load-a-preset)
+  - [Change the alpha / blending of a group](#change-the-alpha--blending-of-a-group)
+    - [Add another group](#add-another-group)
   - [Add images into modV](#add-images-into-modv)
   - [Add modules into modV](#add-modules-into-modv)
-- [1.1 Breakout Session](#11-breakout-session)
+    - [Use blending to make logo visible](#use-blending-to-make-logo-visible)
+- [1.2 Breakout Session](#12-breakout-session)
 - [2. Audio reactive visuals](#2-audio-reactive-visuals)
   - [Audio routing](#audio-routing-1)
 - [2.1 Breakout Session](#21-breakout-session)
@@ -107,13 +115,31 @@ TODO: Basics to work with modV, groups, layers, add modules, preview output
 
 DEMO : Basic animation with build in modules
 
+## Change the layout
+
+## Add a module to a group
+
+### Text
+
+### Waveform
+
+### Webcam
+
+This will only work if you have a second webcam or not use your webcam inside of a video chat (e.g. Zoom)
+
 ## Save / Load a preset
 
 tbd
 
+## Change the alpha / blending of a group
+
+### Add another group
+
 ## Add images into modV
 
 tbd
+
+---
 
 ## Add modules into modV
 
@@ -126,10 +152,13 @@ tbd
    * Provide a guide on how to load your own shaders + parameterize them into modV (advanced)
       * And mention this one for people that are way to fast
 
+### Use blending to make logo visible
+
+"Source in"
 
 ---
 
-# 1.1 Breakout Session
+# 1.2 Breakout Session
 
 ---
 
@@ -137,7 +166,7 @@ tbd
 
 * Use Audio reactive parameters, smoothing, blend modes of layers
 * Load a custom shader from Diana / Eliza into modV
-* Load custom image like a logo
+* Load custom image like a logo to recreate the modV workshop teaser
 
 Demo: Custom image + Audio reactive scale using the microphone
 
