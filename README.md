@@ -14,7 +14,7 @@
   - [Who is behind modV?](#who-is-behind-modv)
   - [Where is modV being used?](#where-is-modv-being-used)
 - [1. Get to know modV](#1-get-to-know-modv)
-  - [Change the layout](#change-the-layout)
+  - [Rearrange the panel layout](#rearrange-the-panel-layout)
   - [Add a module to a group](#add-a-module-to-a-group)
     - [Text](#text)
     - [Waveform](#waveform)
@@ -25,16 +25,15 @@
   - [Add images into modV](#add-images-into-modv)
   - [Add modules into modV](#add-modules-into-modv)
     - [Use blending to make logo visible](#use-blending-to-make-logo-visible)
-- [1.2 Breakout Session](#12-breakout-session)
+  - [1.2 Breakout Session](#12-breakout-session)
 - [2. Audio reactive visuals](#2-audio-reactive-visuals)
   - [Audio routing](#audio-routing-1)
-- [2.1 Breakout Session](#21-breakout-session)
 - [3. Techniques to get certain effects](#3-techniques-to-get-certain-effects)
   - [Tunnel effect](#tunnel-effect)
   - [Background fade](#background-fade)
   - [Using a group as mask (text)](#using-a-group-as-mask-text)
   - [Hue rotation for trailing colors](#hue-rotation-for-trailing-colors)
-- [3.1 Breakout Session](#31-breakout-session)
+  - [3.1 Breakout Session](#31-breakout-session)
 - [4. Use modV for a live performance](#4-use-modv-for-a-live-performance)
 
 ---
@@ -115,7 +114,7 @@ TODO: Basics to work with modV, groups, layers, add modules, preview output
 
 DEMO : Basic animation with build in modules
 
-## Change the layout
+## Rearrange the panel layout
 
 ## Add a module to a group
 
@@ -158,7 +157,7 @@ tbd
 
 ---
 
-# 1.2 Breakout Session
+## 1.2 Breakout Session
 
 ---
 
@@ -179,7 +178,7 @@ Demo: Audio routing with external audio source
 
 ---
 
-# 2.1 Breakout Session
+##d 2.1 Breakout Session
 
 ---
 
@@ -199,7 +198,7 @@ Isn't this when I usually do "Blend > Source In" on the elements after the Text 
 
 ---
 
-# 3.1 Breakout Session
+## 3.1 Breakout Session
 
 ---
 
