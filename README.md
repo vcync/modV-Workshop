@@ -17,16 +17,16 @@
   - [Save / Load a preset](#save--load-a-preset)
   - [Add images into modV](#add-images-into-modv)
   - [Add modules into modV](#add-modules-into-modv)
-- [Breakout Session A](#breakout-session-a)
+- [1.1 Breakout Session](#11-breakout-session)
 - [2. Audio reactive visuals](#2-audio-reactive-visuals)
   - [Audio routing](#audio-routing-1)
-- [Breakout Session B](#breakout-session-b)
+- [2.1 Breakout Session](#21-breakout-session)
 - [3. Techniques to get certain effects](#3-techniques-to-get-certain-effects)
   - [Tunnel effect](#tunnel-effect)
   - [Background fade](#background-fade)
   - [Using a group as mask (text)](#using-a-group-as-mask-text)
   - [Hue rotation for trailing colors](#hue-rotation-for-trailing-colors)
-- [Breakout Session C](#breakout-session-c)
+- [3.1 Breakout Session](#31-breakout-session)
 - [4. Use modV for a live performance](#4-use-modv-for-a-live-performance)
 
 ---
@@ -129,7 +129,7 @@ tbd
 
 ---
 
-# Breakout Session A
+# 1.1 Breakout Session
 
 ---
 
@@ -150,7 +150,7 @@ Demo: Audio routing with external audio source
 
 ---
 
-# Breakout Session B
+# 2.1 Breakout Session
 
 ---
 
@@ -170,7 +170,7 @@ Isn't this when I usually do "Blend > Source In" on the elements after the Text 
 
 ---
 
-# Breakout Session C
+# 3.1 Breakout Session
 
 ---
 
