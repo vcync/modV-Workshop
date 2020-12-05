@@ -28,6 +28,7 @@
   - [1.2 Breakout Session](#12-breakout-session)
 - [2. Audio reactive visuals](#2-audio-reactive-visuals)
   - [Audio routing](#audio-routing-1)
+  - [2.1 Breakout Session](#21-breakout-session)
 - [3. Techniques to get certain effects](#3-techniques-to-get-certain-effects)
   - [Tunnel effect](#tunnel-effect)
   - [Background fade](#background-fade)
@@ -178,7 +179,7 @@ Demo: Audio routing with external audio source
 
 ---
 
-##d 2.1 Breakout Session
+## 2.1 Breakout Session
 
 ---
 
