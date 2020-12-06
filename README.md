@@ -15,7 +15,7 @@
   - [Where is modV being used?](#where-is-modv-being-used)
 - [1. Get to know modV](#1-get-to-know-modv)
   - [Rearrange the panel layout](#rearrange-the-panel-layout)
-  - [Add a module to a group](#add-a-module-to-a-group)
+  - [Add modules to a group](#add-modules-to-a-group)
     - [Text](#text)
     - [Waveform](#waveform)
     - [Webcam](#webcam)
@@ -24,6 +24,8 @@
     - [Add another group](#add-another-group)
   - [Add images into modV](#add-images-into-modv)
   - [Add modules into modV](#add-modules-into-modv)
+    - [Module licence](#module-licence)
+    - [Add ISF shader into modV](#add-isf-shader-into-modv)
     - [Use blending to make logo visible](#use-blending-to-make-logo-visible)
   - [1.2 Breakout Session](#12-breakout-session)
 - [2. Audio reactive visuals](#2-audio-reactive-visuals)
@@ -117,7 +119,7 @@ DEMO : Basic animation with build in modules
 
 ## Rearrange the panel layout
 
-## Add a module to a group
+## Add modules to a group
 
 ### Text
 
@@ -137,16 +139,32 @@ tbd
 
 ## Add images into modV
 
-tbd
+In order to get an image into modV, you have to find the [media folder](https://modv.vcync.gl/v3/guide/media.html#media-folder) on your computer. 
+
+After you have located the media folder, you can [follow the steps to add the image](https://modv.vcync.gl/v3/guide/media.html#using-an-image):
+
+1. Add the image into the `image` folder
+2. Add the `Texture 2D` module into a group
+3. In the property-inspector for the module select `image` in the `texture` property, which adds a new list underneath
+4. In the list, select the image you added into the `image` folder
 
 ---
 
 ## Add modules into modV
 
+The biggest power over modV is that you can extend it with your own or other third-party modules as modV supports different kind of visual sources. So let's see how this can be done. 
+
+### Module licence
+
 * Taking stuff from other people
    * Shadertoy License
    * CodePen License
    * Make clear that taking resources from someone else should always be credited as we don’t want to steal anyone's work AND check the license
+
+### Add ISF shader into modV
+
+For this workshop we are collaborating with [ilithya](https://twitter.com/ilithya_net) and [eliza](https://twitter.com/iamelizasj) which means we can use their awesome "[Movement](https://codepen.io/ilithya/pen/poyMNvG)" shader to show how audio reactivity works. As the file should only be used in this workshop, we will provide the URL to shader when the actual workshop happens. For everyone else doing this tutorial, you can pick one of the [modules](/modules) in the repository. 
+
 * Load the shader from Diana & Eliza
 * ISF
    * Provide a guide on how to load your own shaders + parameterize them into modV (advanced)
