@@ -251,17 +251,79 @@ Demo: Audio routing with external audio source
 
 # 4. Techniques to get certain effects
 
-TODO: Please add a preset for each effect into [presets](/presets)!
+>Note: Concentrics has been used an example module here. This can be substituted for any module drawing to the screen. Feel free to experiment!
 
 ## Tunnel effect
 
+|Before|After|
+|---|---|
+|![Tunnel effect before](/media/004/modV_PW8rYj8YFc.png)|![Tunnel effect after](/media/004/modV_73QoFUWI5L.png)|
+
+#### Module order
+
+1. scale
+    * Update prop `scale` to anything over or under 0
+2. Concentrics
+
 ## Background fade
 
-## Using a group as mask (text)
+|Before|After|
+|---|---|
+|![Background fade before](/media/004/modV_PW8rYj8YFc.png)|![Background fade after](/media/004/modV_3yssjuhJxg.png)|
 
-Isn't this when I usually do "Blend > Source In" on the elements after the Text (or any other path)?
+#### Module order
+
+1. block-color
+    * Update prop `Alpha` to a low value over 0
+2. Concentrics
 
 ## Hue rotation for trailing colors
+
+This builds upon the two previous techniques.
+
+|Before|After|
+|---|---|
+|![Hue rotation before](/media/004/modV_QxgzbdBmoe.png)|![Hue rotation after](/media/004/modV_UN7Y5aUxhL.png)|
+
+#### Module order
+
+1. Hue-Saturation
+    * Update prop `Hue` to anything just over or under 0
+2. block-color
+    * Update prop `Alpha` to a low value over 0
+3. scale
+    * Update prop `scale` to anything over or under 0
+4. Concentrics
+
+## Text mask
+
+This builds upon the three previous techniques.
+
+|Before|After|
+|---|---|
+|![Text mask before](/media/004/modV_UN7Y5aUxhL.png)|![Text mask after](/media/004/modV_slxL53Vi1d.png)|
+
+### Group 1
+
+#### Group settings
+* Un-check `Inherit` in the group settings
+    * This prevents the group from drawing the output of the previous (or last, if it's the first group) to the screen again
+
+#### Module order
+1. Hue-Saturation
+    * Update prop `Hue` to anything just over or under 0
+2. block-color
+    * Update prop `Alpha` to a low value over 0
+3. scale
+    * Update prop `scale` to anything over or under 0
+4. Concentrics
+
+### Group 2
+
+#### Module order
+1. Text
+    * Ensure the text fill color is `#000000` (black)
+    * Set the blend mode of the Module to `Difference`
 
 ---
 
