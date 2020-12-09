@@ -21,11 +21,10 @@
   - [Add a module to a group](#add-a-module-to-a-group)
     - [Text](#text)
   - [Change group preferences](#change-group-preferences)
-    - [Waveform](#waveform)
-    - [Webcam](#webcam)
+  - [Use a filter: Pixelate](#use-a-filter-pixelate)
+  - [Change module preferences](#change-module-preferences)
+  - [Add another group and rename it](#add-another-group-and-rename-it)
   - [Save / Load a preset](#save--load-a-preset)
-  - [Change the alpha / blending of a group](#change-the-alpha--blending-of-a-group)
-    - [Add another group](#add-another-group)
 - [Breakout Session A](#breakout-session-a)
   - [Add images into modV](#add-images-into-modv)
   - [Add modules into modV](#add-modules-into-modv)
@@ -187,19 +186,57 @@ Each group determines how it's modules are drawn to the `Output window`. The def
 * Now our `Text` is rendered only once
 
 
-### Waveform
+## Use a filter: Pixelate
 
-### Webcam
+There are two kind of modules in modV. Some of them draw something "new", like the `Text` module did. Others changing the output based on what is actually drawn and do something with this. We call them `filter`, even when they are also "just" modules. 
 
-This will only work if you have a second webcam or not use your webcam inside of a video chat (e.g. Zoom)
+* In the `Gallery` find the `Pixelate` 2D module
+* Add it into the same group as the `Text`, but make sure to add it on the right side of `Text`
+
+The order inside of a group matters, the modules are drawn on top of each other from left to right!
+
+* We `Enable` the `Pixelate` module and see that the `Text` has a pixel-effect
+* With focus on the `Pixelate` module we can now change the `Amount` in the `Property Inspector` to see the pixels getting bigger and smaller, depending in which direction the `Amount` is changed
+
+
+## Change module preferences
+
+Each module also has some default preferences which are visible all the time.
+
+* Take a look the preferences:
+  * **Enable**: If enabled, draws the module to the output.
+  * **Alpha**: Sets the opacity of the module. 
+  * **Blend**: Sets the Blend (e.g. Multiply) or Composition mode (e.g. Source in) of the module
+* We set the `Blend` to `Multiply` and the `Alpha` to 0.5
+
+
+## Add another group and rename it
+
+We can also add more groups into modV.
+
+* In `Groups`, click on the `New Group` button and see a new group under the first group
+* Initially, the group is disabled, so let's enable it by clicking on the checkbox in the top left corner
+* We also want to rename it, which can be done by double clicking on the group label `New Group` and entering a text
+* Confirm this by pressing the Enter key
+
+This makes it possible to group modules together that work well with each other. And during a live performance we can enable / disable a couple of modules at the same time. 
+
 
 ## Save / Load a preset
 
-tbd
+A preset contains all the groups and modules with all of their properties and can be used to switch between different configurations or exchange this with other people. In this workshop we use it to save the things we are doing or to load the predefined [presets](/presets) that come with the repository.
 
-## Change the alpha / blending of a group
+To make sure we don't loose what you already created, we first want to save our preset
 
-### Add another group
+* Im the menu choose `File` > `Save Preset`, which opens a dialog
+* Enter a name for your preset and save it somewhere on your computer
+* The file that was created is named `<name_of_preset>.json`
+
+Now that we know how to save our configuration, we can load a preset
+
+* Im the menu choose `File` > `Open Preset`, which opens a dialog
+* There you can select the preset [001_modV_in_Action.json](presets/001_modV_in_Action.json) that comes with this repository
+* After it is loaded, you will more or less see what we have created so far
 
 ---
 
@@ -211,6 +248,10 @@ tbd
 ---
 
 ## Add images into modV
+
+Let's put an image (like a logo) into modV and apply some visual effects. 
+
+* 
 
 In order to get an image into modV, you have to find the [media folder](https://modv.vcync.gl/v3/guide/media.html#media-folder) on your computer. 
 
