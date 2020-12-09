@@ -287,6 +287,8 @@ For this workshop we are collaborating with [ilithya](https://twitter.com/ilithy
 
 "Source in"
 
+[002_custom_image_and_custom_module.json](presets/002_custom_image_and_custom_module.json)
+
 ---
 
 # 3. Use Audio in modV
