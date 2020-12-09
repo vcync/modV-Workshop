@@ -325,6 +325,15 @@ This builds upon the three previous techniques.
     * Ensure the text fill color is `#000000` (black)
     * Set the blend mode of the Module to `Difference`
 
+## Liquid text
+
+Load /presets/004_Liquid_Text.json.
+
+This preset makes heavy use of Blend modes and two very powerful ISF shaders, "Edge Distort" and "Optical Flow Distort".
+Combined in the right way it's possible to achieve a "liquid" effect.
+
+This is similar to the effect seen in a video clip of modV from JSConf EU 2018, though that was modV 2 so the composition was likely different.
+
 ---
 
 # Breakout Session C
