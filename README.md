@@ -14,9 +14,12 @@
   - [Who is behind modV?](#who-is-behind-modv)
   - [Where is modV being used?](#where-is-modv-being-used)
 - [2. How to use modV](#2-how-to-use-modv)
+  - [User Interface](#user-interface)
+  - [Menu](#menu)
   - [Rearrange the panel layout](#rearrange-the-panel-layout)
-  - [Add modules to a group](#add-modules-to-a-group)
+  - [Add a module to a group](#add-a-module-to-a-group)
     - [Text](#text)
+  - [Change group options (inherit + clearing)](#change-group-options-inherit--clearing)
     - [Waveform](#waveform)
     - [Webcam](#webcam)
   - [Save / Load a preset](#save--load-a-preset)
@@ -107,6 +110,8 @@ We are using modV for shows around the world for more than 4 years.
 
 Before we dive into creating audio reactive visuals, we want to explain how the UI of modV is structured so we can talk about the same things. 
 
+## User Interface
+
 ![modV User Interface Overview](media/20201204_modV_UI_overview.png)
 
 * <span style="background:#f00;padding:0 .2em">**A**</span>: `Groups`. A Group contains modules. Modules within Groups can be arranged to change the drawing order. 
@@ -114,18 +119,42 @@ Before we dive into creating audio reactive visuals, we want to explain how the 
 * **C**: `Info View`. Shows information about the different panels in modV when you hover over them using your mouse. 
 * **D**: `Gallery`. Contains all modules that can be added to a `Group`. Modules are categorized as `2D` (Canvas 2D), `ISF` (Interactive Shader Format) and `Shader` (WebGL Shader / GLSL). You can either scroll the list or use the search box at the top to find a specific module. 
 * **E**: `Input config`.  The panel allows creation of Input Links. Select a `Module Control` in the `Module Inspector`, then use the `Input Config` to assign an `Audio Feature`, `MIDI control` or `Tween` to automate the Module Control.
-* **F**: ``
+* **F**: `Property Inspector`
+* **G**: `Preview`
+* **H**: `Input Device Config`
 
 
-TODO: Basics to work with modV, groups, layers, add modules, preview output
+## Menu
 
-DEMO : Basic animation with build in modules
+There are multiple menu elements, but the most important ones are `File` and `View`:
+
+* `File`
+  * `Open Preset`: Load a preset from your computer into modV
+  * `Save Preset`: Save a preset as JSON onto your computer that contains all groups, modules & settings of what you have created in modV
+  * `Open Media Folder`; Uses your default application for exploring files (e.g. Finder on MacOS or Explorer on Windows) to open the `media` folder of modV. There you can put your images or third-party modules.
+* `View`
+  * `New Output Window`: Opens the output window if this was closed. 
+  * `Reload`; As modV is a web application we can reload modV as we can reload any website in order to get a clean state.
 
 ## Rearrange the panel layout
 
-## Add modules to a group
+Every panel in modV can be dragged and placed into different positions. This makes it possible to create any layout you want and feel comfortable with. 
+
+* Move the `Info view` by clicking on it's title (keep the mouse button pressed) and dragging it onto the title of the `Gallery`. When you release the mouse button again, you can drop the `Info View` as a second tab besides the `Gallery`
+* To give the `Gallery` even more space, we can click (keep the mouse button pressed) on the border between the `Gallery` and the `Input config`. Then we can move the mouse to the right to make the `Gallery` wider
+
+## Add a module to a group
+
+Now let's get some visual output. 
 
 ### Text
+
+* Find the `Text` module in the `Gallery`, either by enterting the modules name into the search box or by scrolling trough the list of modules (hint: It's a `2D` module)
+* Double click the module to add it to the active group or drag and drop it into the group you want it
+
+## Change group options (inherit + clearing)
+
+
 
 ### Waveform
 
@@ -181,7 +210,6 @@ For this workshop we are collaborating with [ilithya](https://twitter.com/ilithy
 * Load the shader from Diana & Eliza
 * ISF
    * Provide a guide on how to load your own shaders + parameterize them into modV (advanced)
-      * And mention this one for people that are way to fast
 
 ### Use blending to make logo visible
 
@@ -194,7 +222,7 @@ For this workshop we are collaborating with [ilithya](https://twitter.com/ilithy
 ## Audio processing in modV
 
 * How does audio processcing work in modV by using Meyda
-* Demo of Audio Features
+* [Demo of Audio Features](https://jsbin.com/movezix/15/edit?js,output)
 * Differences of Meyda to FFT
 
 Demo: Custom image + Audio reactive scale using the microphone
@@ -239,7 +267,7 @@ Isn't this when I usually do "Blend > Source In" on the elements after the Text 
 
 # Breakout Session C
 
-* 
+* Play around with the advanced techniques, load each preset once and see how they behave
 
 ---
 
