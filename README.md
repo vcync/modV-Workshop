@@ -178,6 +178,7 @@ Now let's get some visual output.
 * We still don't see very much, as a black text is rendered on a dark background, so let's change the `fillColor` to red
 * To make the text bigger, we increase the `size`
 * Now let's also enable `stroke` which gives us a white border around each character
+* We also can change the `font`, where we can select any font that is installed on the computer
 * Why do we see a morph effect and not just the 2D text? 
 
 ## Change group preferences
@@ -252,7 +253,7 @@ Now that we know how to save our configuration, we can load a preset
 # Breakout Session A
 
 * Play around with modV and get used to the UI
-* TODO: Add module x and do y to get effect z
+* Add modules from the `Gallery` and change their properties in the `Property Inspector` to see how they behave and interact with other modules
 
 ---
 
@@ -260,16 +261,14 @@ Now that we know how to save our configuration, we can load a preset
 
 Let's put an image (like a logo) into modV and apply some visual effects. 
 
-* 
+* In the menu choose `View` > `Open Media Folder` which opens the media folder
+  * If you want to know more about the strucutre of the media folder, please take a look at the [documentation](https://modv.vcync.gl/v3/guide/media.html#media-folder)
+* Navigate into `default` > `image` and put any image (not SVG) into the folder
+* In modV find the `Texture 2D` module in the `Gallery` and add it to the second group
+* In the `Property Inspector` for the module select `image` in the `texture` property, which adds a new list underneath
+* In the list, select the image you added into the `image` folder
 
-In order to get an image into modV, you have to find the [media folder](https://modv.vcync.gl/v3/guide/media.html#media-folder) on your computer. 
-
-After you have located the media folder, you can [follow the steps to add the image](https://modv.vcync.gl/v3/guide/media.html#using-an-image):
-
-1. Add the image into the `image` folder
-2. Add the `Texture 2D` module into a group
-3. In the property-inspector for the module select `image` in the `texture` property, which adds a new list underneath
-4. In the list, select the image you added into the `image` folder
+Now that we have the image in modV, we can change some properties to make it fit the output window, depending on how small or big it is. 
 
 ---
 
@@ -288,13 +287,19 @@ The biggest power over modV is that you can extend it with your own or other thi
 
 For this workshop we are collaborating with [ilithya](https://twitter.com/ilithya_net) and [eliza](https://twitter.com/iamelizasj) which means we can use their awesome "[Movement](https://codepen.io/ilithya/pen/poyMNvG)" shader to show how audio reactivity works. As the file should only be used in this workshop, we will provide the URL to shader when the actual workshop happens. For everyone else doing this tutorial, you can pick one of the [modules](/modules) in the repository. 
 
-* Load the shader from Diana & Eliza
-* ISF
-   * Provide a guide on how to load your own shaders + parameterize them into modV (advanced)
+* In the menu choose `View` > `Open Media Folder` which opens the media folder
+* Navigate into `default` > `module` and put the `ilithya_eliza_movement.js` into it (or any other custom module)
+  * Custom modules must follow the implemention guide lines of modV in order to work, see TODO add resources for Canvas2D + ISF
+
+The original shader was published on CodePen and we used the ISF editor to parameterize it. All parameters that you add in ISF are also automatically available in modV. 
+
 
 ### Use blending to make logo visible
 
-"Source in"
+The last thing we want to do is to make the logo visible again. 
+
+* Select the `Texture 2D` module and select `Source in` in the `Module preferences` as a `Blend`
+
 
 [002_custom_image_and_custom_module.json](presets/002_custom_image_and_custom_module.json)
 
