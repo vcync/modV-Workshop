@@ -38,9 +38,18 @@
 - [Breakout Session B](#breakout-session-b)
 - [4. Techniques to get certain effects](#4-techniques-to-get-certain-effects)
   - [Tunnel effect](#tunnel-effect)
+      - [Module order](#module-order)
   - [Background fade](#background-fade)
-  - [Using a group as mask (text)](#using-a-group-as-mask-text)
+      - [Module order](#module-order-1)
   - [Hue rotation for trailing colors](#hue-rotation-for-trailing-colors)
+      - [Module order](#module-order-2)
+  - [Text mask](#text-mask)
+    - [Group 1](#group-1)
+      - [Group settings](#group-settings)
+      - [Module order](#module-order-3)
+    - [Group 2](#group-2)
+      - [Module order](#module-order-4)
+  - [Liquid text](#liquid-text)
 - [Breakout Session C](#breakout-session-c)
 - [5. Use modV for a live performance](#5-use-modv-for-a-live-performance)
 
@@ -271,9 +280,9 @@ The biggest power over modV is that you can extend it with your own or other thi
 ### Module licence
 
 * Taking stuff from other people
-   * Shadertoy License
-   * CodePen License
-   * Make clear that taking resources from someone else should always be credited as we don’t want to steal anyone's work AND check the license
+   * Shadertoy: [Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)](https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US)
+   * CodePen: [MIT](https://opensource.org/licenses/MIT)
+ * Make clear that taking resources from someone else should always be credited as we don’t want to steal anyone's work AND check the license
 
 ### Add ISF shader into modV
 
