@@ -52,6 +52,7 @@
   - [Liquid text](#liquid-text)
 - [Breakout Session C](#breakout-session-c)
 - [5. Use modV for a live performance](#5-use-modv-for-a-live-performance)
+  - [Remote control modV using RTP-MIDI](#remote-control-modv-using-rtp-midi)
 
 ---
 
@@ -252,6 +253,8 @@ Now that we know how to save our configuration, we can load a preset
 
 # Breakout Session A
 
+![Breakout Session A](media/20201214_Breakout_Session_A.jpg)
+
 * Play around with modV and get used to the UI
 * Add modules from the `Gallery` and change their properties in the `Property Inspector` to see how they behave and interact with other modules
 
@@ -304,6 +307,8 @@ The last thing we want to do is to make the logo visible again.
 [002_custom_image_and_custom_module.json](presets/002_custom_image_and_custom_module.json)
 
 ---
+---
+---
 
 # 3. Use Audio in modV
 
@@ -330,11 +335,15 @@ Demo: Audio routing with external audio source
 
 # Breakout Session B
 
+![Breakout Session B](media/20201214_Breakout_Session_B.jpg)
+
 * Play around with audio reactivity
 * Use RMS / ZCR / Energy and find out how they are different from each other
 * Use an expression to boost a value
 * Combine different audio features with each other
 
+---
+---
 ---
 
 # 4. Techniques to get certain effects
@@ -426,8 +435,12 @@ This is similar to the effect seen in a video clip of modV from JSConf EU 2018, 
 
 # Breakout Session C
 
+![Breakout Session C](media/20201214_Breakout_Session_C.jpg)
+
 * Play around with the advanced techniques, load each preset once and see how they behave
 
+---
+---
 ---
 
 # 5. Use modV for a live performance
@@ -439,6 +452,10 @@ This is similar to the effect seen in a video clip of modV from JSConf EU 2018, 
    * Streaming with OBS
    * Collaborate over Remote Desktop 
      * If we can make this work :D
+
+## Remote control modV using RTP-MIDI
+
+![RTP MIDI explained](media/20201214_RTP_MIDI.jpg)
 
 ---
 
