@@ -258,7 +258,7 @@ Now that we know how to save our configuration, we can load a preset
 
 * Play around with modV and get used to the UI
 * Add modules from the `Gallery` and change their properties in the `Property Inspector` to see how they behave
-* Change the `Blend` of the modules to make the modules interact with each other
+* Change the `Blend` of the modules to make them interact with each other
 
 ---
 
@@ -287,10 +287,13 @@ Every time you take visual modules from other people, you have to be sure to che
 
 Let's take a look at platforms where you can find modules: 
 
-* [Shadertoy](https://www.shadertoy.com/): [Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)](https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US)
-* [CodePen](https://codepen.io): [MIT](https://opensource.org/licenses/MIT)
-* [ISF Editor](https://editor.isf.video/shaders): Depends on each shader
- 
+Platform | Default License
+--- | --- | ---
+[Shadertoy](https://www.shadertoy.com/) | [Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)](https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US)
+[CodePen](https://codepen.io) | MIT](https://opensource.org/licenses/MIT)
+[ISF Editor](https://editor.isf.video/shaders) | Depends on each shader
+
+
 So when you are taking something from someone: 
 
 * Make sure to find the license
