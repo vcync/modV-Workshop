@@ -31,6 +31,7 @@
     - [Module licence](#module-licence)
     - [Add ISF shader into modV](#add-isf-shader-into-modv)
     - [Use blending to make logo visible](#use-blending-to-make-logo-visible)
+    - [Create your own modules for modV](#create-your-own-modules-for-modv)
 - [3. Use Audio in modV](#3-use-audio-in-modv)
   - [Audio processing in modV](#audio-processing-in-modv)
   - [Audio routing](#audio-routing-1)
@@ -256,7 +257,8 @@ Now that we know how to save our configuration, we can load a preset
 ![Breakout Session A](media/20201214_Breakout_Session_A.jpg)
 
 * Play around with modV and get used to the UI
-* Add modules from the `Gallery` and change their properties in the `Property Inspector` to see how they behave and interact with other modules
+* Add modules from the `Gallery` and change their properties in the `Property Inspector` to see how they behave
+* Change the `Blend` of the modules to make the modules interact with each other
 
 ---
 
@@ -281,10 +283,22 @@ The biggest power over modV is that you can extend it with your own or other thi
 
 ### Module licence
 
-* Taking stuff from other people
-   * Shadertoy: [Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)](https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US)
-   * CodePen: [MIT](https://opensource.org/licenses/MIT)
- * Make clear that taking resources from someone else should always be credited as we don’t want to steal anyone's work AND check the license
+Every time you take visual modules from other people, you have to be sure to check out the licence. Some work is only allowed for non-commercial projects (e.g [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US)), others you can use for commersial purposes (e.g. [MIT](https://opensource.org/licenses/MIT)), but you have to make sure to credit the author. 
+
+Let's take a look at platforms where you can find modules: 
+
+* [Shadertoy](https://www.shadertoy.com/): [Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)](https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US)
+* [CodePen](https://codepen.io): [MIT](https://opensource.org/licenses/MIT)
+* [ISF Editor](https://editor.isf.video/shaders): Depends on each shader
+ 
+So when you are taking something from someone: 
+
+* Make sure to find the license
+* Get in contact with the developer if you can't find a license or the license doesn't suit the purpose of your project
+* Don't use someone's work if it's not covered by their license
+* Credit the author for their work
+* Thank the author!!!
+
 
 ### Add ISF shader into modV
 
@@ -305,6 +319,14 @@ The last thing we want to do is to make the logo visible again.
 
 
 [002_custom_image_and_custom_module.json](presets/002_custom_image_and_custom_module.json)
+
+
+### Create your own modules for modV
+
+Instead of using predefined modules, we can also integrate our own modules into modV by converting the original code into a format that is usable inside of modV. As this would go into too much detail, we are showing you some guides on how this can be achived:
+
+* TODO: Canvas2D guide
+* TODO: ISF guide
 
 ---
 ---
@@ -450,8 +472,6 @@ This is similar to the effect seen in a video clip of modV from JSConf EU 2018, 
    * Record the Video with OBS
      * Second screen for the output window
    * Streaming with OBS
-   * Collaborate over Remote Desktop 
-     * If we can make this work :D
 
 ## Remote control modV using RTP-MIDI
 
