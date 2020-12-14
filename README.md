@@ -288,9 +288,9 @@ Every time you take visual modules from other people, you have to be sure to che
 Let's take a look at platforms where you can find modules: 
 
 Platform | Default License
---- | --- | ---
+--- | ---
 [Shadertoy](https://www.shadertoy.com/) | [Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)](https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US)
-[CodePen](https://codepen.io) | MIT](https://opensource.org/licenses/MIT)
+[CodePen](https://codepen.io) | [MIT](https://opensource.org/licenses/MIT)
 [ISF Editor](https://editor.isf.video/shaders) | Depends on each shader
 
 
