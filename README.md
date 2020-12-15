@@ -387,6 +387,8 @@ Demo: Audio routing with external audio source
     * Update prop `scale` to anything over or under 0
 2. Concentrics
 
+[004_Tunnel_effect.json](presets/004_Tunnel_effect.json)
+
 ## Background fade
 
 |Before|After|
@@ -398,6 +400,8 @@ Demo: Audio routing with external audio source
 1. block-color
     * Update prop `Alpha` to a low value over 0
 2. Concentrics
+
+[004_Background_fade.json](presets/004_Background_fade.json)
 
 ## Hue rotation for trailing colors
 
@@ -416,6 +420,8 @@ This builds upon the two previous techniques.
 3. scale
     * Update prop `scale` to anything over or under 0
 4. Concentrics
+
+[004_Hue_rotation_for_trailing_colors.json](presets/004_Hue_rotation_for_trailing_colors.json)
 
 ## Text mask
 
@@ -447,9 +453,11 @@ This builds upon the three previous techniques.
     * Ensure the text fill color is `#000000` (black)
     * Set the blend mode of the Module to `Difference`
 
+[004_Text_mask.json](presets/004_Text_mask.json)
+
 ## Liquid text
 
-Load /presets/004_Liquid_Text.json.
+Load [004_Liquid_Text.json](presets/004_Liquid_Text.json).
 
 This preset makes heavy use of Blend modes and two very powerful ISF shaders, "Edge Distort" and "Optical Flow Distort".
 Combined in the right way it's possible to achieve a "liquid" effect.
