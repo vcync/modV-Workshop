@@ -16,6 +16,7 @@
   - [Where is modV being used?](#where-is-modv-being-used)
 - [2. How to use modV](#2-how-to-use-modv)
   - [User Interface](#user-interface)
+    - [Input Device Config](#input-device-config)
     - [Output Window](#output-window)
   - [Menu](#menu)
   - [Rearrange the panel layout](#rearrange-the-panel-layout)
@@ -139,9 +140,19 @@ Before we dive into creating audio reactive visuals, we want to explain how the 
 * **C**: `Info View`. Shows information about the different panels in modV when you hover over them using your mouse. 
 * **D**: `Gallery`. Contains all modules that can be added to a `Group`. Modules are categorized as `2D` (Canvas 2D), `ISF` (Interactive Shader Format) and `Shader` (WebGL Shader / GLSL). You can either scroll the list or use the search box at the top to find a specific module. 
 * **E**: `Input config`.  The panel allows creation of Input Links. Select a `Module Control` in the `Module Inspector`, then use the `Input Config` to assign an `Audio Feature`, `MIDI control` or `Tween` to automate the Module Control.
-* **F**: `Property Inspector`
-* **G**: `Preview`. Shows the output of all enabled groups and modules. When you leave the default `Main Output`, it will show exaclty the same output as the `Output Window`
-* **H**: `Input Device Config`
+* **F**: `Property Inspector`. When a `module` is focused, it shows all of it's properties. Each property can be updated to change how the module is drawn to the `Output Window`. 
+* **G**: `Preview`. Shows the output of all enabled groups and modules. When you leave the default `Main Output`, it will show exaclty the same output as the `Output Window`.
+* **H**: `Input Device Config`. Configuration for devices (Audio, Video, MIDI, BPM) that can be used as an input. 
+
+### Input Device Config
+
+![modV User Interface: Input Device Config](media/20201215_modV_UI_InputDeviceConfig.jpg)
+
+* **Audio/Video**: 
+  * Audio: Microphone or other audio source. Useful for audio routing.
+  * Video: Webcam
+* **MIDI**: Lists all MIDI controllers. 
+* **BPM**: Lists all "Beats per Minute" sources
 
 ### Output Window
 
