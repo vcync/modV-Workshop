@@ -11,6 +11,7 @@
   - [Audio Routing](#audio-routing)
   - [Download / clone the repository](#download--clone-the-repository)
 - [1. History of modV](#1-history-of-modv)
+  - [What does modV mean?](#what-does-modv-mean)
   - [Who is behind modV?](#who-is-behind-modv)
   - [Where is modV being used?](#where-is-modv-being-used)
 - [2. How to use modV](#2-how-to-use-modv)
@@ -101,11 +102,16 @@ The important folders are:
 
 In this workshop we are using modV 3.x, the latest version of modV that comes as a standalone desktop application. With modV, you can combine modules with each other to generate visual output. Every module has properties that can be updated in real time to change how the module is drawn. Each of these properties can also be updated automatically using audio features based on audio input (e.g. a microphone). 
 
+## What does modV mean?
+
+modV stands for "modular Visualization" and at it's core, it can be used to combine different kind of visual modules with each other to create a certain outcome. This is especially useful for live performances. 
+
 ## Who is behind modV?
 
 * [Sam Wray](https://2xaa.fm), founder and core contributor
   * Created modV in 2014
 * [Tim Pietrusky](https://nerddis.co), core contributor
+  * Created NERDDISCO Studio in 2014 to generate visuals in the brower
   * Joined modV in 2016 when both Sam and Tim did a collab-talk + performance for dotJS 2016 in Paris
 
 Since then we are using modV for shows around the world and also as part of [LiveJS](https://livejs.network). 
@@ -113,7 +119,8 @@ Since then we are using modV for shows around the world and also as part of [Liv
 ## Where is modV being used?
 
 * [Various videos & images of modV in action](https://photos.google.com/share/AF1QipPhz8zKecemmMxnMbFdhFo-__tSmrmqMQzrD4YkE1MUFq-FQxqgePMFure5h05SfA?key=eDRWNVhnVjE4SXU5N0xSNVpBQkw0SmRxQ0JCZjFn)
-* [Performance of 2xAA & NERDDISCO for OPEN UP SUMMIT 2020 using modV 3.x](https://www.youtube.com/watch?v=RhM3arvVAPM)
+* [Performance of 2xAA & NERDDISCO for GamerDisco 10th Anniversary](https://www.youtube.com/watch?v=2oPTMdeySAA&t=14)
+* [Performance of 2xAA & NERDDISCO for OPEN UP SUMMIT 2020](https://www.youtube.com/watch?v=RhM3arvVAPM)
 * [A talk about modV 2.x at dotJS 2016](https://www.youtube.com/watch?v=GA7-OfYSzvA)
 
 
