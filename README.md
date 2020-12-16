@@ -59,11 +59,14 @@
   - [Liquid text](#liquid-text)
 - [Breakout Session C](#breakout-session-c)
 - [5. Use modV for a live performance](#5-use-modv-for-a-live-performance)
+  - [Use a MIDI to control modV](#use-a-midi-to-control-modv)
   - [Remote control modV using RTP-MIDI](#remote-control-modv-using-rtp-midi)
     - [Prerequisites](#prerequisites)
     - [System requirements](#system-requirements)
     - [Guide for macOS and Windows](#guide-for-macos-and-windows)
     - [Debugging](#debugging)
+- [6. Keep in touch](#6-keep-in-touch)
+  - [Join the discussion on GitHub](#join-the-discussion-on-github)
 
 ---
 
@@ -614,7 +617,6 @@ This is similar to the effect seen in a video clip of modV from JSConf EU 2018, 
 # 5. Use modV for a live performance
 
    * How to recover from a crash
-   * How to use MIDI
 
 ---
 
@@ -680,6 +682,22 @@ Follow this guide on how to connect OBS to Twitch: [https://www.tomsguide.com/uk
 In the main OBS window, click "Start Recording" to record locally.
 If you want to stream, click "Start Streaming".
 
+---
+
+## Use a MIDI to control modV
+
+It is really cool to the the UI of modV, but during a live gig we want to change between different modules fast. This is where MIDI comes into play, as we can use any MIDI controller that can be connected via USB to the computer in modV. 
+
+* Connect the MIDI controller to the computer
+* In the `Input Device Config` > `MIDI` make sure that your MIDI controller is shown
+* Select the `Enable` checkbox of any module
+* In the `Input Config` > `MIDI` click on `Learn`. This enables a mode where modV is listing for any MIDI input, for example the push of a button and then assigns this MIDI input to the module input that we selected before (in this case `Enable`)
+* Push a button on your MIDI controller and see that `Learn` transformed into `Forget`
+
+When we now press the same button again, we can toggle the `Enable` checkbox of the module which makes it possible to turn on and of the module using a MIDI controller.
+
+💡 What is still missing is a way to also create a virtual MIDI controller so we can create the layout of the hardware MIDI controller and assign  labels to the different MIDI input elements (like a button or fader or knob) to see what they control in modV. We are working on this via: https://github.com/vcync/modV/issues/296
+
 ## Remote control modV using RTP-MIDI
 
 > _RTP-MIDI (also known as AppleMIDI) is a protocol to transport MIDI messages within RTP (Real-time Protocol) packets over Ethernet and WiFi networks. It is completely open and free (no license is needed), and is compatible both with LAN and WAN application fields._
@@ -733,3 +751,16 @@ On Windows, right clicking rtpMIDI and running as Administrator _seemed_ to help
 
 ---
 
+# 6. Keep in touch
+
+We are super happy that you are now a modV user and hope that you will have a lot of awesome experiences with it. Please make sure to always tag your work with **#modv** so we can keep in touch. 
+
+## Join the discussion on GitHub
+
+If you have a question or idea or just want to leave us a message related to modV, then please use [modV Discussions on GitHub](https://github.com/vcync/modV/discussions). 
+
+
+---
+
+
+2020 with ❤️ by [Sam Wray aka 2xAA aka NOSIGNAL](https://2xaa.fm) & [Tim Pietrusky aka NERDDISCO](https://nerddis.co)
