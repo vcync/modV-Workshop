@@ -40,9 +40,8 @@
   - [Audio routing](#audio-routing-1)
   - [Audio reactive visuals](#audio-reactive-visuals)
     - [Assign an audio feature to a module property](#assign-an-audio-feature-to-a-module-property)
-      - [Energy](#energy)
     - [Smoothing](#smoothing)
-    - [Shape the property value with Expressions](#shape-the-property-value-with-expressions)
+    - [Shape the property value with an Expression](#shape-the-property-value-with-an-expression)
 - [Breakout Session B](#breakout-session-b)
 - [4. Techniques to get certain effects](#4-techniques-to-get-certain-effects)
   - [Tunnel effect](#tunnel-effect)
@@ -420,10 +419,6 @@ We can now "use" our audio source (e.g. talk into the microphone or play our mus
 
 ![The value of the Audio Feature is updated](media/20201216_modV_Audio_Feature_Value.png)
 
-#### Energy 
-
-When using the `energy` audio feature the values are not between 0 and 1, but much higher. A good idea is to change the `Max. Value` to `0.02` to be able to use it properly. 
-
 ---
 
 🎇 [003_Audio_Features.json](presets/003_Audio_Features.json)
@@ -433,24 +428,50 @@ When using the `energy` audio feature the values are not between 0 and 1, but mu
 
 ### Smoothing
 
-In order to get a smoother update
+In order to get a smooth change when the `Audio Feature` is updated, we can also use `Smoothing`
+
+* In the `Gallery` find the `scale` module and add it after the `Ilithya & Eliza - Movement` module
+* Enable the module and set `Blend` to `Copy`
+* In the `Module Inspector`, select the `scale` property
+* In the `Input Config` > `Audio` select `energy`
+  * As you can see, the value of `energy` is not between 0 and 1, but way above 1. It is there fore a good idea to restrict the maximum value when using `energy`
+* Set the `Max. Value` to `0.02`
+* Now let's make the value smooth by changing `Input Config` > `Smoothing` to `2,0`
+
+---
 
 🎇 [003_Audio_Features_Smoothing.json](presets/003_Audio_Features_Smoothing.json)
 
+---
 
-### Shape the property value with Expressions
 
-In order to have more control on how an `Audio Feature` is changing the property of an module, we can use `Expressions`.
+### Shape the property value with an Expression
 
-More [examples can be found in the documentation](https://modv.vcync.gl/v3/guide/expressions.html). 
+In order to have more control on how an `Audio Feature` is changing the property of an module, we can use an `Expression`.
 
+* Open 🎇 [003_Audio_Features_Smoothing.json](presets/003_Audio_Features_Smoothing.json)
+* Select the `scale` module
+* In the `Module Inspector`, select the `scale` property
+* In the `Input Config` > `Expression` click into the textarea
+* We see the content `value` which represents the value of the `Audio Feature`, in this case the value `scale` of the module `scale`
+* We can do math operations in this textarea so let's try that, copy and paste the following expressions into the textarea and then click outside of the textarea to save the change
+  * `value * 2`: makes the value bigger
+  * `value / 2`: makes the value smaller
+  * `value > 0.3 ? value : value / 2`: A condition that checks if the `value` is bigger than `0.3`. If it's bigger, then `value` will be used, if not then `value / 2` will be used
+
+💡 If you want to see the actual value of a module property, you have to right click on the range slider. Another right click changes back to the range slider 
+
+Make sure to checkout the [expressions documentation](https://modv.vcync.gl/v3/guide/expressions.html) for more insights. 
 
 
 --- 
 
+🎇 [003_Audio_Features_Expression.json](presets/003_Audio_Features_Expression.json)
 
 ---
 
+---
+---
 ---
 
 # Breakout Session B
