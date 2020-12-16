@@ -36,8 +36,11 @@
     - [Create your own modules for modV](#create-your-own-modules-for-modv)
 - [3. Use Audio in modV](#3-use-audio-in-modv)
   - [Audio processing in modV](#audio-processing-in-modv)
+    - [Meyda](#meyda)
+  - [Assigning audio features](#assigning-audio-features)
   - [Audio routing](#audio-routing-1)
   - [Audio reactive visuals](#audio-reactive-visuals)
+    - [Expressions](#expressions)
 - [Breakout Session B](#breakout-session-b)
 - [4. Techniques to get certain effects](#4-techniques-to-get-certain-effects)
   - [Tunnel effect](#tunnel-effect)
@@ -56,6 +59,10 @@
 - [Breakout Session C](#breakout-session-c)
 - [5. Use modV for a live performance](#5-use-modv-for-a-live-performance)
   - [Remote control modV using RTP-MIDI](#remote-control-modv-using-rtp-midi)
+    - [Prerequisites](#prerequisites)
+    - [System requirements](#system-requirements)
+    - [Guide for macOS and Windows](#guide-for-macos-and-windows)
+    - [Debugging](#debugging)
 
 ---
 
@@ -355,7 +362,8 @@ The last thing we want to do is to make the logo visible again.
 Instead of using predefined modules, we can also integrate our own modules into modV by converting the original code into a format that is usable inside of modV. As this would go into too much detail, we are showing you some guides on how this can be achived:
 
 * [2D module](https://modv.vcync.gl/v3/guide/writingA2dModule.html)
-* [ISF module](https://modv.vcync.gl/v3/guide/writingAIsfModule.html)
+* [ISF module](https://modv.vcync.gl/v3/guide/writingAnIsfModule.html)
+  * We recommend to use the ISF format and not putting your GLSL shader as a `WebGL shader` into modV as the debugging possibilities in modV are very limited. Using the [ISF editor](https://editor.isf.video/) as described in the guide is way more advanced, especially for debugging problems.
 
 ---
 ---
@@ -390,7 +398,11 @@ To assign an audio feature:
 3. Select `Energy`
 4. To tame the feature, change the `Max. Value` to `0.02` or low value
 
-[003_Audio_Features.json](presets/002_custom_image_and_custom_module.json)
+---
+
+🎇 [003_Audio_Features.json](presets/003_Audio_Features.json)
+
+---
 
 ## Audio routing
 
@@ -404,10 +416,22 @@ Demo: Audio routing with external audio source
 
 ## Audio reactive visuals
 
+With Audio in modV we can create audio reactive visuals by assigning audio features to module properties. 
+
 * Use Audio reactive parameters, smoothing
 * Load custom image like a logo to recreate the modV workshop teaser
 
-[003_Audio_Features_Smoothing.json](presets/002_custom_image_and_custom_module.json)
+
+
+### Expressions
+
+
+
+--- 
+
+🎇 [003_Audio_Features_Smoothing.json](presets/003_Audio_Features_Smoothing.json)
+
+---
 
 ---
 
@@ -440,7 +464,11 @@ Demo: Audio routing with external audio source
     * Update prop `scale` to anything over or under 0
 2. Concentrics
 
-[004_Tunnel_effect.json](presets/004_Tunnel_effect.json)
+---
+
+🎇 [004_Tunnel_effect.json](presets/004_Tunnel_effect.json)
+
+---
 
 ## Background fade
 
@@ -454,7 +482,11 @@ Demo: Audio routing with external audio source
     * Update prop `Alpha` to a low value over 0
 2. Concentrics
 
-[004_Background_fade.json](presets/004_Background_fade.json)
+---
+
+🎇 [004_Background_fade.json](presets/004_Background_fade.json)
+
+---
 
 ## Hue rotation for trailing colors
 
@@ -474,7 +506,11 @@ This builds upon the two previous techniques.
     * Update prop `scale` to anything over or under 0
 4. Concentrics
 
-[004_Hue_rotation_for_trailing_colors.json](presets/004_Hue_rotation_for_trailing_colors.json)
+---
+
+🎇 [004_Hue_rotation_for_trailing_colors.json](presets/004_Hue_rotation_for_trailing_colors.json)
+
+---
 
 ## Text mask
 
@@ -506,16 +542,24 @@ This builds upon the three previous techniques.
     * Ensure the text fill color is `#000000` (black)
     * Set the blend mode of the Module to `Difference`
 
-[004_Text_mask.json](presets/004_Text_mask.json)
+---
+
+🎇 [004_Text_mask.json](presets/004_Text_mask.json)
+
+---
 
 ## Liquid text
-
-Load [004_Liquid_Text.json](presets/004_Liquid_Text.json).
 
 This preset makes heavy use of Blend modes and two very powerful ISF shaders, "Edge Distort" and "Optical Flow Distort".
 Combined in the right way it's possible to achieve a "liquid" effect.
 
 This is similar to the effect seen in a video clip of modV from JSConf EU 2018, though that was modV 2 so the composition was likely different.
+
+---
+
+🎇 [004_Liquid_Text.json](presets/004_Liquid_Text.json).
+
+---
 
 ---
 
