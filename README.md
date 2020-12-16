@@ -270,6 +270,10 @@ Now that we know how to save our configuration, we can load a preset
 
 ---
 
+🎇 [001_modV_in_Action.json](presets/001_modV_in_Action.json)
+
+---
+
 # Breakout Session A
 
 ![Breakout Session A](media/20201214_Breakout_Session_A.jpg)
@@ -329,7 +333,7 @@ For this workshop we are collaborating with [ilithya](https://twitter.com/ilithy
 * Navigate into `default` > `module` and put the `ilithya_eliza_movement.js` into it (or any other custom module)
   * Custom modules must follow the implemention guide lines of modV in order to work, see TODO add resources for Canvas2D + ISF
 
-The original shader was published on CodePen and we used the ISF editor to parameterize it. All parameters that you add in ISF are also automatically available in modV. 
+The original shader was published on CodePen and we used the ISF editor to parameterize it. All parameters that you add in ISF are also automatically available in modV via the `Property Inspector`. 
 
 
 ### Use blending to make logo visible
@@ -338,16 +342,19 @@ The last thing we want to do is to make the logo visible again.
 
 * Select the `Texture 2D` module and select `Source in` in the `Module preferences` as a `Blend`
 
+---
 
-[002_custom_image_and_custom_module.json](presets/002_custom_image_and_custom_module.json)
+🎇 [002_custom_image_and_custom_module.json](presets/002_custom_image_and_custom_module.json)
+
+---
 
 
 ### Create your own modules for modV
 
 Instead of using predefined modules, we can also integrate our own modules into modV by converting the original code into a format that is usable inside of modV. As this would go into too much detail, we are showing you some guides on how this can be achived:
 
-* TODO: Canvas2D guide
-* TODO: ISF guide
+* [2D module](https://modv.vcync.gl/v3/guide/writingA2dModule.html)
+* [ISF module](https://modv.vcync.gl/v3/guide/writingAIsfModule.html)
 
 ---
 ---
@@ -467,7 +474,7 @@ This builds upon the three previous techniques.
 
 ## Liquid text
 
-Load /presets/004_Liquid_Text.json.
+🎇 Load /presets/004_Liquid_Text.json.
 
 This preset makes heavy use of Blend modes and two very powerful ISF shaders, "Edge Distort" and "Optical Flow Distort".
 Combined in the right way it's possible to achieve a "liquid" effect.
