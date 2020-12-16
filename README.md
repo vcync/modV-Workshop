@@ -65,6 +65,8 @@
     - [System requirements](#system-requirements)
     - [Guide for macOS and Windows](#guide-for-macos-and-windows)
     - [Debugging](#debugging)
+- [6. Keep in touch](#6-keep-in-touch)
+  - [Join the discussion on GitHub](#join-the-discussion-on-github)
 
 ---
 
@@ -686,3 +688,16 @@ On Windows, right clicking rtpMIDI and running as Administrator _seemed_ to help
 
 ---
 
+# 6. Keep in touch
+
+We are super happy that you are now a modV user and hope that you will have a lot of awesome experiences with it. Please make sure to always tag your work with **#modv** so we can keep in touch. 
+
+## Join the discussion on GitHub
+
+If you have a question or idea or just want to leave us a message related to modV, then please use [modV Discussions on GitHub](https://github.com/vcync/modV/discussions). 
+
+
+---
+
+
+2020 with ❤️ by [Sam Wray aka 2xAA aka NOSIGNAL](https://2xaa.fm) & [Tim Pietrusky aka NERDDISCO](https://nerddis.co)
