@@ -59,6 +59,7 @@
   - [Liquid text](#liquid-text)
 - [Breakout Session C](#breakout-session-c)
 - [5. Use modV for a live performance](#5-use-modv-for-a-live-performance)
+  - [Use a MIDI to control modV](#use-a-midi-to-control-modv)
   - [Remote control modV using RTP-MIDI](#remote-control-modv-using-rtp-midi)
     - [Prerequisites](#prerequisites)
     - [System requirements](#system-requirements)
@@ -614,10 +615,23 @@ This is similar to the effect seen in a video clip of modV from JSConf EU 2018, 
 # 5. Use modV for a live performance
 
    * How to recover from a crash
-   * How to use MIDI
    * Record the Video with OBS
      * Second screen for the output window
    * Streaming with OBS
+
+## Use a MIDI to control modV
+
+It is really cool to the the UI of modV, but during a live gig we want to change between different modules fast. This is where MIDI comes into play, as we can use any MIDI controller that can be connected via USB to the computer in modV. 
+
+* Connect the MIDI controller to the computer
+* In the `Input Device Config` > `MIDI` make sure that your MIDI controller is shown
+* Select the `Enable` checkbox of any module
+* In the `Input Config` > `MIDI` click on `Learn`. This enables a mode where modV is listing for any MIDI input, for example the push of a button and then assigns this MIDI input to the module input that we selected before (in this case `Enable`)
+* Push a button on your MIDI controller and see that `Learn` transformed into `Forget`
+
+When we now press the same button again, we can toggle the `Enable` checkbox of the module which makes it possible to turn on and of the module using a MIDI controller.
+
+💡 What is still missing is a way to also create a virtual MIDI controller so we can create the layout of the hardware MIDI controller and assign  labels to the different MIDI input elements (like a button or fader or knob) to see what they control in modV. We are working on this via: https://github.com/vcync/modV/issues/296
 
 ## Remote control modV using RTP-MIDI
 
