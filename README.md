@@ -467,8 +467,7 @@ Make sure to checkout the [expressions documentation](https://modv.vcync.gl/v3/g
 --- 
 
 🎇 [003_Audio_Features_Expression.json](presets/003_Audio_Features_Expression.json)
-
----
+🎇 [003_Audio_Features_Expression_Deluxe.json](presets/003_Audio_Features_Expression_Deluxe.json)
 
 ---
 ---
@@ -480,7 +479,7 @@ Make sure to checkout the [expressions documentation](https://modv.vcync.gl/v3/g
 
 * Play around with audio reactivity
 * Use RMS / ZCR / Energy and find out how they are different from each other
-* Use an expression to boost a value
+* Use an expression to shape the value of an property
 * Combine different audio features with each other
 
 ---
