@@ -37,10 +37,12 @@
 - [3. Use Audio in modV](#3-use-audio-in-modv)
   - [Audio processing in modV](#audio-processing-in-modv)
     - [Meyda](#meyda)
-  - [Assigning audio features](#assigning-audio-features)
   - [Audio routing](#audio-routing-1)
   - [Audio reactive visuals](#audio-reactive-visuals)
-    - [Expressions](#expressions)
+    - [Assign an audio feature to a module property](#assign-an-audio-feature-to-a-module-property)
+      - [Energy](#energy)
+    - [Smoothing](#smoothing)
+    - [Shape the property value with Expressions](#shape-the-property-value-with-expressions)
 - [Breakout Session B](#breakout-session-b)
 - [4. Techniques to get certain effects](#4-techniques-to-get-certain-effects)
   - [Tunnel effect](#tunnel-effect)
@@ -389,15 +391,6 @@ So with Meyda, rather than a value which says the frequencies in one specific ra
 
 Let's take a look at a [demo of Audio Features vs FFT](https://di7h9.csb.app/).
 
-## Assigning audio features
-
-To assign an audio feature:
-
-1. Select a `Module Control` in the `Module Inspector`
-2. In the `Input Config` panel, expend the `Audio` section
-3. Select `Energy`
-4. To tame the feature, change the `Max. Value` to `0.02` or low value
-
 ---
 
 🎇 [003_Audio_Features.json](presets/003_Audio_Features.json)
@@ -412,24 +405,49 @@ To assign an audio feature:
 
 > Note: at the time of the workshop you must have a working video input, or modV is unable to capture your selected audio source
 
-Demo: Audio routing with external audio source
-
 ## Audio reactive visuals
 
 With Audio in modV we can create audio reactive visuals by assigning audio features to module properties. 
 
-* Use Audio reactive parameters, smoothing
-* Load custom image like a logo to recreate the modV workshop teaser
+### Assign an audio feature to a module property
+
+* Open 🎇 [002_custom_image_and_custom_module.json](presets/002_custom_image_and_custom_module.json)
+* Select the module `Ilithya & Eliza - Movement` so that the `Module Inspector` is opened
+* Click on the `i_animation1` property to select it
+* In the `Input Config`, expend `Audio` and select `rms` as the `Audio Feature`
+
+We can now "use" our audio source (e.g. talk into the microphone or play our music) and see that the value of the property is changing in the `Module Inspector`. What we can also see is the raw value of the `rms` `Audio Feature` right next to it in the `Input Config`
+
+![The value of the Audio Feature is updated](media/20201216_modV_Audio_Feature_Value.png)
+
+#### Energy 
+
+When using the `energy` audio feature the values are not between 0 and 1, but much higher. A good idea is to change the `Max. Value` to `0.02` to be able to use it properly. 
+
+---
+
+🎇 [003_Audio_Features.json](presets/003_Audio_Features.json)
+
+---
 
 
+### Smoothing
 
-### Expressions
+In order to get a smoother update
+
+🎇 [003_Audio_Features_Smoothing.json](presets/003_Audio_Features_Smoothing.json)
+
+
+### Shape the property value with Expressions
+
+In order to have more control on how an `Audio Feature` is changing the property of an module, we can use `Expressions`.
+
+More [examples can be found in the documentation](https://modv.vcync.gl/v3/guide/expressions.html). 
 
 
 
 --- 
 
-🎇 [003_Audio_Features_Smoothing.json](presets/003_Audio_Features_Smoothing.json)
 
 ---
 
