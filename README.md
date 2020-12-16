@@ -11,10 +11,12 @@
   - [Audio Routing](#audio-routing)
   - [Download / clone the repository](#download--clone-the-repository)
 - [1. History of modV](#1-history-of-modv)
+  - [What does modV mean?](#what-does-modv-mean)
   - [Who is behind modV?](#who-is-behind-modv)
   - [Where is modV being used?](#where-is-modv-being-used)
 - [2. How to use modV](#2-how-to-use-modv)
   - [User Interface](#user-interface)
+    - [Input Device Config](#input-device-config)
     - [Output Window](#output-window)
   - [Menu](#menu)
   - [Rearrange the panel layout](#rearrange-the-panel-layout)
@@ -101,11 +103,16 @@ The important folders are:
 
 In this workshop we are using modV 3.x, the latest version of modV that comes as a standalone desktop application. With modV, you can combine modules with each other to generate visual output. Every module has properties that can be updated in real time to change how the module is drawn. Each of these properties can also be updated automatically using audio features based on audio input (e.g. a microphone). 
 
+## What does modV mean?
+
+modV stands for "modular Visualization" and at it's core, it can be used to combine different kind of visual modules with each other to create a certain outcome. This is especially useful for live performances. 
+
 ## Who is behind modV?
 
 * [Sam Wray](https://2xaa.fm), founder and core contributor
   * Created modV in 2014
 * [Tim Pietrusky](https://nerddis.co), core contributor
+  * Created NERDDISCO Studio in 2014 to generate visuals in the brower
   * Joined modV in 2016 when both Sam and Tim did a collab-talk + performance for dotJS 2016 in Paris
 
 Since then we are using modV for shows around the world and also as part of [LiveJS](https://livejs.network). 
@@ -113,7 +120,8 @@ Since then we are using modV for shows around the world and also as part of [Liv
 ## Where is modV being used?
 
 * [Various videos & images of modV in action](https://photos.google.com/share/AF1QipPhz8zKecemmMxnMbFdhFo-__tSmrmqMQzrD4YkE1MUFq-FQxqgePMFure5h05SfA?key=eDRWNVhnVjE4SXU5N0xSNVpBQkw0SmRxQ0JCZjFn)
-* [Performance of 2xAA & NERDDISCO for OPEN UP SUMMIT 2020 using modV 3.x](https://www.youtube.com/watch?v=RhM3arvVAPM)
+* [Performance of 2xAA & NERDDISCO for GamerDisco 10th Anniversary](https://www.youtube.com/watch?v=2oPTMdeySAA&t=14)
+* [Performance of 2xAA & NERDDISCO for OPEN UP SUMMIT 2020](https://www.youtube.com/watch?v=RhM3arvVAPM)
 * [A talk about modV 2.x at dotJS 2016](https://www.youtube.com/watch?v=GA7-OfYSzvA)
 
 
@@ -132,9 +140,20 @@ Before we dive into creating audio reactive visuals, we want to explain how the 
 * **C**: `Info View`. Shows information about the different panels in modV when you hover over them using your mouse. 
 * **D**: `Gallery`. Contains all modules that can be added to a `Group`. Modules are categorized as `2D` (Canvas 2D), `ISF` (Interactive Shader Format) and `Shader` (WebGL Shader / GLSL). You can either scroll the list or use the search box at the top to find a specific module. 
 * **E**: `Input config`.  The panel allows creation of Input Links. Select a `Module Control` in the `Module Inspector`, then use the `Input Config` to assign an `Audio Feature`, `MIDI control` or `Tween` to automate the Module Control.
-* **F**: `Module Inspector`
-* **G**: `Preview`. Shows the output of all enabled groups and modules. When you leave the default `Main Output`, it will show exaclty the same output as the `Output Window`
-* **H**: `Input Device Config`
+
+* **F**: `Module Inspector`. When a `module` is focused, it shows all of it's properties. Each property can be updated to change how the module is drawn to the `Output Window`. 
+* **G**: `Preview`. Shows the output of all enabled groups and modules. When you leave the default `Main Output`, it will show exaclty the same output as the `Output Window`.
+* **H**: `Input Device Config`. Configuration for devices (Audio, Video, MIDI, BPM) that can be used as an input. 
+
+### Input Device Config
+
+![modV User Interface: Input Device Config](media/20201215_modV_UI_InputDeviceConfig.jpg)
+
+* **Audio/Video**: 
+  * Audio: Microphone or other audio source. Useful for audio routing.
+  * Video: Webcam
+* **MIDI**: Lists all MIDI controllers. 
+* **BPM**: Lists all "Beats per Minute" sources
 
 ### Output Window
 
