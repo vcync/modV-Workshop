@@ -140,7 +140,8 @@ Before we dive into creating audio reactive visuals, we want to explain how the 
 * **C**: `Info View`. Shows information about the different panels in modV when you hover over them using your mouse. 
 * **D**: `Gallery`. Contains all modules that can be added to a `Group`. Modules are categorized as `2D` (Canvas 2D), `ISF` (Interactive Shader Format) and `Shader` (WebGL Shader / GLSL). You can either scroll the list or use the search box at the top to find a specific module. 
 * **E**: `Input config`.  The panel allows creation of Input Links. Select a `Module Control` in the `Module Inspector`, then use the `Input Config` to assign an `Audio Feature`, `MIDI control` or `Tween` to automate the Module Control.
-* **F**: `Property Inspector`. When a `module` is focused, it shows all of it's properties. Each property can be updated to change how the module is drawn to the `Output Window`. 
+
+* **F**: `Module Inspector`. When a `module` is focused, it shows all of it's properties. Each property can be updated to change how the module is drawn to the `Output Window`. 
 * **G**: `Preview`. Shows the output of all enabled groups and modules. When you leave the default `Main Output`, it will show exaclty the same output as the `Output Window`.
 * **H**: `Input Device Config`. Configuration for devices (Audio, Video, MIDI, BPM) that can be used as an input. 
 
@@ -194,7 +195,7 @@ Now let's get some visual output.
 * Find the `Text` module in the `Gallery`, either by enterting the modules name into the search box or by scrolling trough the list of modules (hint: It's a `2D` module)
 * Double click the module to add it to the active group (you might have to click on the group to focus it) or drag and drop it into the group
 * Enable the module by clicking into the `Enable` checkbox, which will render the module into the `output`
-* We still don't see anything, so let's go into the `Property Inspector` and change the property `text` by putting any text inside
+* We still don't see anything, so let's go into the `Module Inspector` and change the property `text` by putting any text inside
 * We still don't see very much, as a black text is rendered on a dark background, so let's change the `fillColor` to red
 * To make the text bigger, we increase the `size`
 * Now let's also enable `stroke` which gives us a white border around each character
@@ -226,7 +227,7 @@ There are two kind of modules in modV. Some of them draw something "new", like t
 The order inside of a group matters, the modules are drawn on top of each other from left to right!
 
 * We `Enable` the `Pixelate` module and see that the `Text` has a pixel-effect
-* With focus on the `Pixelate` module we can now change the `Amount` in the `Property Inspector` to see the pixels getting bigger and smaller, depending in which direction the `Amount` is changed
+* With focus on the `Pixelate` module we can now change the `Amount` in the `Module Inspector` to see the pixels getting bigger and smaller, depending in which direction the `Amount` is changed
 
 
 ## Change module preferences
@@ -279,7 +280,7 @@ Now that we know how to save our configuration, we can load a preset
 ![Breakout Session A](media/20201214_Breakout_Session_A.jpg)
 
 * Play around with modV and get used to the UI
-* Add modules from the `Gallery` and change their properties in the `Property Inspector` to see how they behave
+* Add modules from the `Gallery` and change their properties in the `Module Inspector` to see how they behave
 * Change the `Blend` of the modules to make them interact with each other
 
 ---
@@ -292,7 +293,7 @@ Let's put an image (like a logo) into modV and apply some visual effects.
   * If you want to know more about the strucutre of the media folder, please take a look at the [documentation](https://modv.vcync.gl/v3/guide/media.html#media-folder)
 * Navigate into `default` > `image` and put any image (not SVG) into the folder
 * In modV find the `Texture 2D` module in the `Gallery` and add it to the second group
-* In the `Property Inspector` for the module select `image` in the `texture` property, which adds a new list underneath
+* In the `Module Inspector` for the module select `image` in the `texture` property, which adds a new list underneath
 * In the list, select the image you added into the `image` folder
 
 Now that we have the image in modV, we can change some properties to make it fit the output window, depending on how small or big it is. 
@@ -364,15 +365,40 @@ Instead of using predefined modules, we can also integrate our own modules into 
 
 ## Audio processing in modV
 
-* How does audio processcing work in modV by using Meyda
-* [Demo of Audio Features](https://jsbin.com/movezix/15/edit?js,output)
-* Differences of Meyda to FFT
+### Meyda
 
-Demo: Custom image + Audio reactive scale using the microphone
+modV uses [Meyda](https://meyda.js.org/) to analyze the incoming audio.
+
+> _Meyda is a JavaScript audio feature extraction library. It works [...] to expose information about the timbre and perceived qualities of sound._
+
+Meyda gives us specialised "features" of the audio which allows for some extremely punchy visualizations.
+
+The key part to know about Meyda is that it gives us access to values that correlate to how our brains inteprate the audio and music.
+
+Traditional audio-visual programs give allow access to the frequencies of audio (FFT values).
+
+So with Meyda, rather than a value which says the frequencies in one specific range are loud or quiet at any one time, Meyda abstracts that information into more useful values which could tell us a part of the song is still loud, but it _sounds_ mellow, so our visuals will more-or-less follow how the song is being intepreted by the audience.
+
+Let's take a look at a [demo of Audio Features vs FFT](https://di7h9.csb.app/).
+
+## Assigning audio features
+
+To assign an audio feature:
+
+1. Select a `Module Control` in the `Module Inspector`
+2. In the `Input Config` panel, expend the `Audio` section
+3. Select `Energy`
+4. To tame the feature, change the `Max. Value` to `0.02` or low value
+
+[003_Audio_Features.json](presets/002_custom_image_and_custom_module.json)
 
 ## Audio routing
 
-* Get external audio into modV
+1. Open the `Input Device Config` panel
+2. In the sub-panel `Audio/Video`,  select the `Audio Input` drop-down menu
+3. Find your audio source
+
+> Note: at the time of the workshop you must have a working video input, or modV is unable to capture your selected audio source
 
 Demo: Audio routing with external audio source
 
@@ -380,6 +406,8 @@ Demo: Audio routing with external audio source
 
 * Use Audio reactive parameters, smoothing
 * Load custom image like a logo to recreate the modV workshop teaser
+
+[003_Audio_Features_Smoothing.json](presets/002_custom_image_and_custom_module.json)
 
 ---
 
@@ -412,6 +440,8 @@ Demo: Audio routing with external audio source
     * Update prop `scale` to anything over or under 0
 2. Concentrics
 
+[004_Tunnel_effect.json](presets/004_Tunnel_effect.json)
+
 ## Background fade
 
 |Before|After|
@@ -423,6 +453,8 @@ Demo: Audio routing with external audio source
 1. block-color
     * Update prop `Alpha` to a low value over 0
 2. Concentrics
+
+[004_Background_fade.json](presets/004_Background_fade.json)
 
 ## Hue rotation for trailing colors
 
@@ -441,6 +473,8 @@ This builds upon the two previous techniques.
 3. scale
     * Update prop `scale` to anything over or under 0
 4. Concentrics
+
+[004_Hue_rotation_for_trailing_colors.json](presets/004_Hue_rotation_for_trailing_colors.json)
 
 ## Text mask
 
@@ -472,9 +506,11 @@ This builds upon the three previous techniques.
     * Ensure the text fill color is `#000000` (black)
     * Set the blend mode of the Module to `Difference`
 
+[004_Text_mask.json](presets/004_Text_mask.json)
+
 ## Liquid text
 
-🎇 Load /presets/004_Liquid_Text.json.
+Load [004_Liquid_Text.json](presets/004_Liquid_Text.json).
 
 This preset makes heavy use of Blend modes and two very powerful ISF shaders, "Edge Distort" and "Optical Flow Distort".
 Combined in the right way it's possible to achieve a "liquid" effect.
@@ -503,8 +539,54 @@ This is similar to the effect seen in a video clip of modV from JSConf EU 2018, 
 
 ## Remote control modV using RTP-MIDI
 
+> _RTP-MIDI (also known as AppleMIDI) is a protocol to transport MIDI messages within RTP (Real-time Protocol) packets over Ethernet and WiFi networks. It is completely open and free (no license is needed), and is compatible both with LAN and WAN application fields._
+
+_[excerpt from RTP-MIDI on Wikipedia](https://en.wikipedia.org/wiki/RTP-MIDI)_
+
 ![RTP MIDI explained](media/20201214_RTP_MIDI.jpg)
+
+### Prerequisites
+
+If you are attempting to network between two computers not on the same local area network (e.g. connected though the same router) and you and your partner cannot create a VPN between the two machines, you will both be required to open ports `5004` and `5005` on your router's firewall.
+
+Please consult your router's documentation/your ISP/a search engine on how to do this as it can be different on each router.
+
+Once your ports have been opened, you and you partner much each note down your public IP address'. On most home internet connections your public IP will not be static and could change at any time, so watch out for that.
+
+### System requirements
+
+* Windows
+    * https://www.tobias-erichsen.de/software/rtpmidi.html
+* Mac
+    * It's built-in :D
+        * `/Applications/Utilities/Audio MIDI Setup` > Window > Show MIDI Studio
+        * There's a Network globe icon on the toolbar which opens the Network Configuration
+* Linux
+  * We've never tried this, but there is a package: [https://github.com/davidmoreno/rtpmidid](https://github.com/davidmoreno/rtpmidid)
+
+### Guide for macOS and Windows
+If you and your partner are on the same local network or are able to VPN between the two computers, Bonjour will auto-discover the partner machine in the Directory.
+
+If you are not on the same network, please see the Prerequisites section above.  
+Add the public IP of your partner to the directory. The port number will be `5004`.
+
+Create and start a session.  
+Add your partner from the directory to your session.
+
+Once you're connected to each other you will see the latency update. (this sometimes is a little buggy on Windows).
+
+Now you can route a MIDI device to the network port in the bottom right.
+
+The top drop-down menu sends the MIDI device messages to the network session.
+The bottom drop-down menu sends the incoming session messages to a device connected to your computer.
+
+To use the incoming MIDI messages from the network session in an application (such as modV, Ableton, etc.), open the MIDI configuration and select the new virtual device which should share the session name.
+
+### Debugging
+
+We used [https://www.midimonitor.com/](https://www.midimonitor.com/) to check for incoming MIDI messages.
+
+On Windows, right clicking rtpMIDI and running as Administrator _seemed_ to help, but this is not required according to [the rtpMIDI documentation](https://www.tobias-erichsen.de/software/rtpmidi/rtpmidi-tutorial.html).
 
 ---
 
-2020 by [Sam Wray](https://2xaa.fm) & [Tim Pietrusky](https://nerddis.co)
