@@ -26,12 +26,13 @@
   - [Use a filter: Pixelate](#use-a-filter-pixelate)
   - [Change module preferences](#change-module-preferences)
   - [Add another group and rename it](#add-another-group-and-rename-it)
+  - [Use a filter: Optical Flow Distort](#use-a-filter-optical-flow-distort)
   - [Save / Load a preset](#save--load-a-preset)
 - [Breakout Session A](#breakout-session-a)
   - [Add images into modV](#add-images-into-modv)
   - [Add modules into modV](#add-modules-into-modv)
     - [Module licence](#module-licence)
-    - [Add ISF shader into modV](#add-isf-shader-into-modv)
+    - [Add a module into modV](#add-a-module-into-modv)
     - [Use blending to make logo visible](#use-blending-to-make-logo-visible)
     - [Create your own modules for modV](#create-your-own-modules-for-modv)
 - [3. Use Audio in modV](#3-use-audio-in-modv)
@@ -40,8 +41,8 @@
   - [Audio routing](#audio-routing-1)
   - [Audio reactive visuals](#audio-reactive-visuals)
     - [Assign an audio feature to a module property](#assign-an-audio-feature-to-a-module-property)
-    - [Smoothing](#smoothing)
     - [Shape the property value with an Expression](#shape-the-property-value-with-an-expression)
+    - [Smoothing](#smoothing)
 - [Breakout Session B](#breakout-session-b)
 - [4. Techniques to get certain effects](#4-techniques-to-get-certain-effects)
   - [Tunnel effect](#tunnel-effect)
@@ -59,6 +60,7 @@
   - [Liquid text](#liquid-text)
 - [Breakout Session C](#breakout-session-c)
 - [5. Use modV for a live performance](#5-use-modv-for-a-live-performance)
+  - [Limit the FPS](#limit-the-fps)
   - [Using OBS to record locally and/or stream to Twitch](#using-obs-to-record-locally-andor-stream-to-twitch)
     - [Prerequisites](#prerequisites)
     - [Guide for all platforms](#guide-for-all-platforms)
@@ -76,6 +78,9 @@
     - [Debugging](#debugging)
 - [6. Keep in touch](#6-keep-in-touch)
   - [Join the discussion on GitHub](#join-the-discussion-on-github)
+- [7. Troubleshooting](#7-troubleshooting)
+  - [Output window is white](#output-window-is-white)
+  - [Modules are broken after loading a preset](#modules-are-broken-after-loading-a-preset)
 
 ---
 
@@ -193,6 +198,7 @@ There are multiple menu elements, but the most important ones are `File` and `Vi
 * `View`
   * `New Output Window`: Opens the output window if this was closed. 
   * `Reload`; As modV is a web application we can reload modV as we can reload any website in order to get a clean state.
+  * `Toogle Developer Tools`: Opens the developer tools of the underlying browser, useful for debugging.
   * `Reset Layout`: Makes sure that all panels are back in their original position after they were rearranged.  
 
 
@@ -267,10 +273,20 @@ We can also add more groups into modV.
 
 * In `Groups`, click on the `New Group` button and see a new group under the first group
 * Initially, the group is disabled, so let's enable it by clicking on the checkbox in the top left corner
-* We also want to rename it, which can be done by double clicking on the group label `New Group` and entering a text
+* We also want to rename it, which can be done by double clicking on the group label `New Group` and entering a text (e.g. `My Group in modV`)
 * Confirm this by pressing the Enter key
 
-This makes it possible to group modules together that work well with each other. And during a live performance we can enable / disable a couple of modules at the same time. 
+This makes it possible to group modules together that work well with each other. And during a live performance we can enable / disable a couple of modules at the same time by enabling / disabling the group.
+
+## Use a filter: Optical Flow Distort
+
+We add another filter:
+
+* In the `Gallery` find the `Optical Flow Distort` ISF module
+* Add it into the group we created (.e.g `My Group in modV`) and enable it
+* Change the `Alpha` to `0.5` and `Blend` to `Color Burn`
+  
+Groups can inherit the output of other groups and change the output of the modules inside of it.
 
 
 ## Save / Load a preset
@@ -311,22 +327,28 @@ Let's put an image (like a logo) into modV and apply some visual effects.
 
 * In the menu choose `View` > `Open Media Folder` which opens the media folder
   * If you want to know more about the strucutre of the media folder, please take a look at the [documentation](https://modv.vcync.gl/v3/guide/media.html#media-folder)
-* Navigate into `default` > `image` and put any image (not SVG) into the folder
+* Navigate into `default` > `image` and put any image (not SVG) into the folder (you can also choose [images/modv-logo.png](images/modv-logo.png) from the repository)
 * In modV find the `Texture 2D` module in the `Gallery` and add it to the second group
-* In the `Module Inspector` for the module select `image` in the `texture` property, which adds a new list underneath
+* In the `Module Inspector` for the module in the `texture` property select `image`, which adds a new list underneath
 * In the list, select the image you added into the `image` folder
 
 Now that we have the image in modV, we can change some properties to make it fit the output window, depending on how small or big it is. 
 
 ---
 
+🎇 [002_custom_image.json](presets/002_custom_image.json)
+
+_(you have to select an image yourself, this preset just contains the `Texture 2D` module without the image)_
+
+---
+
 ## Add modules into modV
 
-The biggest power over modV is that you can extend it with your own or other third-party modules as modV supports different kind of visual sources. So let's see how this can be done. 
+One of the most important features of modV is that you can extend it with your own or other third-party modules as modV supports different kind of visual sources (Canvas2D, GLSL, ISF). So let's see how this can be done. 
 
 ### Module licence
 
-Every time you take visual modules from other people, you have to be sure to check out the licence. Some work is only allowed for non-commercial projects (e.g [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US)), others you can use for commersial purposes (e.g. [MIT](https://opensource.org/licenses/MIT)), but you have to make sure to credit the author. 
+Every time you take visual modules from other people, you have to be sure to check out the licence. Some work is only allowed for non-commercial projects (e.g [CC BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US)), others you can use for commercial purposes (e.g. [MIT](https://opensource.org/licenses/MIT)), but you have to make sure to credit the author. 
 
 Let's take a look at platforms where you can find modules: 
 
@@ -346,26 +368,30 @@ So when you are taking something from someone:
 * Thank the author!!!
 
 
-### Add ISF shader into modV
+### Add a module into modV
 
-For this workshop we are collaborating with [ilithya](https://twitter.com/ilithya_net) and [eliza](https://twitter.com/iamelizasj) which means we can use their awesome "[Movement](https://codepen.io/ilithya/pen/poyMNvG)" shader to show how audio reactivity works. As the file should only be used in this workshop, we will provide the URL to shader when the actual workshop happens. For everyone else doing this tutorial, you can pick one of the [modules](/modules) in the repository. 
+You can pick one of the [modules](/modules) in the repository. 
 
 * In the menu choose `View` > `Open Media Folder` which opens the media folder
-* Navigate into `default` > `module` and put the `ilithya_eliza_movement.js` into it (or any other custom module)
-  * Custom modules must follow the implemention guide lines of modV in order to work, see TODO add resources for Canvas2D + ISF
-
-The original shader was published on CodePen and we used the ISF editor to parameterize it. All parameters that you add in ISF are also automatically available in modV via the `Property Inspector`. 
+* Navigate into `default`
+* You will find different folders here, the ones we need are:
+  * `module`: Contains 2D and GLSL modules with this line ending: `.js`
+  * `isf`: Contains ISF modules with these line endings: `.fs` & `.vs`
+* Put the `nd-torus.fs` into the `isf`-folder
+* Add the module into the second group after the `Texture 2D` module (which holds our image) and enable it
 
 
 ### Use blending to make logo visible
 
-The last thing we want to do is to make the logo visible again. 
+The last thing we want to do is to make the logo visible again, as the module we added is overwriting everything that comes before it.
 
-* Select the `Texture 2D` module and select `Source in` in the `Module preferences` as a `Blend`
+* Select the `nd-torus` module and select `Source in` in the `Module preferences` as a `Blend`
 
 ---
 
-🎇 [002_custom_image_and_custom_module.json](presets/002_custom_image_and_custom_module.json)
+🎇 [002_custom_module.json](presets/002_custom_module.json)
+
+_(in order to load this, you have to complete "[Add a module into modV](#add-a-module-into-modv)", otherwise the preset is broken)_
 
 ---
 
@@ -376,7 +402,9 @@ Instead of using predefined modules, we can also integrate our own modules into 
 
 * [2D module](https://modv.vcync.gl/v3/guide/writingA2dModule.html)
 * [ISF module](https://modv.vcync.gl/v3/guide/writingAnIsfModule.html)
-  * We recommend to use the ISF format and not putting your GLSL shader as a `WebGL shader` into modV as the debugging possibilities in modV are very limited. Using the [ISF editor](https://editor.isf.video/) as described in the guide is way more advanced, especially for debugging problems.
+  * We recommend to use the ISF format and not putting your GLSL shader as a `WebGL shader` into modV as the debugging possibilities in modV are very limited. 
+  * Using the [ISF editor](https://editor.isf.video/) as described in the guide is way more advanced, especially for debugging problems.
+  * You can also use the Dev Tools in modV to see problems in your ISF code and write your code directly in your favorite editor to be fully offline
 
 ---
 ---
@@ -402,11 +430,7 @@ So with Meyda, rather than a value which says the frequencies in one specific ra
 
 Let's take a look at a [demo of Audio Features vs FFT](https://di7h9.csb.app/).
 
----
 
-🎇 [003_Audio_Features.json](presets/003_Audio_Features.json)
-
----
 
 ## Audio routing
 
@@ -422,10 +446,10 @@ With Audio in modV we can create audio reactive visuals by assigning audio featu
 
 ### Assign an audio feature to a module property
 
-* Open 🎇 [002_custom_image_and_custom_module.json](presets/002_custom_image_and_custom_module.json)
-* Select the module `Ilithya & Eliza - Movement` so that the `Module Inspector` is opened
-* Click on the `i_animation1` property to select it
-* In the `Input Config`, expend `Audio` and select `rms` as the `Audio Feature`
+* Select any module (in this case we use `nd-torus`) so that the `Module Inspector` is opened
+  * (Make sure that `Blend` is set to `Normal` so that we see the module completely)
+* Click on the `radius_x` property to select it
+* In the `Input Config`, expand `Audio` and select `rms` (= Root Mean Squared) as the `Audio Feature`
 
 We can now "use" our audio source (e.g. talk into the microphone or play our music) and see that the value of the property is changing in the `Module Inspector`. What we can also see is the raw value of the `rms` `Audio Feature` right next to it in the `Input Config`
 
@@ -433,53 +457,52 @@ We can now "use" our audio source (e.g. talk into the microphone or play our mus
 
 ---
 
-🎇 [003_Audio_Features.json](presets/003_Audio_Features.json)
+🎇 [003_audio_routing_rms.json](presets/003_audio_routing_rms.json)
+
+_(in order to load this, you have to complete "[Add a module into modV](#add-a-module-into-modv)", otherwise the preset is broken)_
 
 ---
-
-
-### Smoothing
-
-In order to get a smooth change when the `Audio Feature` is updated, we can also use `Smoothing`
-
-* In the `Gallery` find the `scale` module and add it after the `Ilithya & Eliza - Movement` module
-* Enable the module and set `Blend` to `Copy`
-* In the `Module Inspector`, select the `scale` property
-* In the `Input Config` > `Audio` select `energy`
-  * As you can see, the value of `energy` is not between 0 and 1, but way above 1. It is there fore a good idea to restrict the maximum value when using `energy`
-* Set the `Max. Value` to `0.02`
-* Now let's make the value smooth by changing `Input Config` > `Smoothing` to `2,0`
-
----
-
-🎇 [003_Audio_Features_Smoothing.json](presets/003_Audio_Features_Smoothing.json)
-
----
-
 
 ### Shape the property value with an Expression
 
 In order to have more control on how an `Audio Feature` is changing the property of an module, we can use an `Expression`.
 
-* Open 🎇 [003_Audio_Features_Smoothing.json](presets/003_Audio_Features_Smoothing.json)
-* Select the `scale` module
-* In the `Module Inspector`, select the `scale` property
+* Select the `nd-torus` module
+* In the `Module Inspector`, select the `radius_x` property
 * In the `Input Config` > `Expression` click into the textarea
-* We see the content `value` which represents the value of the `Audio Feature`, in this case the value `scale` of the module `scale`
+* We see the content `value` which represents the value of the `Audio Feature`, in this case the value `radius_x` of the module `nd-torus`
 * We can do math operations in this textarea so let's try that, copy and paste the following expressions into the textarea and then click outside of the textarea to save the change
   * `value * 2`: makes the value bigger
   * `value / 2`: makes the value smaller
   * `value > 0.3 ? value : value / 2`: A condition that checks if the `value` is bigger than `0.3`. If it's bigger, then `value` will be used, if not then `value / 2` will be used
+  * `1.0 + value`: sets a minimum value of 1.0 and adds `value` on top of that
 
 💡 If you want to see the actual value of a module property, you have to right click on the range slider. Another right click changes back to the range slider 
 
 Make sure to checkout the [expressions documentation](https://modv.vcync.gl/v3/guide/expressions.html) for more insights. 
 
 
---- 
+### Smoothing
 
-🎇 [003_Audio_Features_Expression.json](presets/003_Audio_Features_Expression.json)
-🎇 [003_Audio_Features_Expression_Deluxe.json](presets/003_Audio_Features_Expression_Deluxe.json)
+In order to get a smooth change when the `Audio Feature` is updated, we can also use `Smoothing`
+
+* Select the `nd-torus` module
+* In the `Module Inspector`, select the `radius_x` property
+* Now let's make the value-transition smooth by changing `Input Config` > `Audio` > `Smoothing` to `0.5`
+  * You see that the transition is now way smoother than before, the module is now moving more slowly towards the new value
+  * `0.0`: no smoothing
+  * `0.999`: maximum smoothing
+
+---
+
+🎇 [003_audio_routing_smoothing.json](presets/003_audio_routing_smoothing.json)
+
+_(in order to load this, you have to complete "[Add a module into modV](#add-a-module-into-modv)", otherwise the preset is broken)_
+
+---
+
+
+
 
 ---
 ---
@@ -629,6 +652,14 @@ This is similar to the effect seen in a video clip of modV from JSConf EU 2018, 
 
 ---
 
+## Limit the FPS
+
+Sometimes you want to limit the FPS (frames per second) in order to avoid a performance problem with your computer. For this you can double-blick with the left mouse on `FPS` in the bottom left corner of modV. 
+
+This will open a dialog, where you can specfiy the max FPS you want to use. 
+
+---
+
 ## Using OBS to record locally and/or stream to Twitch
 
 > OBS Studio is free and open source software for video recording and live streaming. Currently Linux, Mac and Windows Builds are available.
@@ -771,5 +802,25 @@ If you have a question or idea or just want to leave us a message related to mod
 
 ---
 
+# 7. Troubleshooting
 
-2020 with ❤️ by [Sam Wray aka 2xAA aka NOSIGNAL](https://2xaa.fm) & [Tim Pietrusky aka NERDDISCO](https://nerddis.co)
+## Output window is white
+
+Refresh modV by doing one of these things:
+* CMD + R or CTRL + R
+* `View` > `Reload`
+
+---
+
+## Modules are broken after loading a preset
+
+This happens when some modules or images, that were used when saving the preset, are not available anymore. 
+
+![module is broken](media/20211120_modV_module_broken.jpg)
+
+Please make sure to complete [Add modules into modV](#add-modules-into-modv) as this adds the `nd-torus` module into modV and this is used in all presets. 
+
+---
+
+
+2020 - 2021 with ❤️ by [Sam Wray aka 2xAA aka NOSIGNAL](https://2xaa.fm) & [Tim Pietrusky aka NERDDISCO](https://nerddis.co)
